@@ -10,10 +10,7 @@ from sounddevice import PortAudioError
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-
-# ----------------------------
 # Preload VAD Model 
-# ----------------------------
 try:
     logging.info("Loading Silero VAD model...")
     vad_model, vad_utils = torch.hub.load(
@@ -108,7 +105,7 @@ async def speak(message: str):
 async def listen_for_speech(prompt_message="Please speak now...", 
                              sample_rate=16000, 
                              chunk_duration=2, 
-                             silence_limit=5,   # stop after 3 silent chunks in a row
+                             silence_limit=5,   
                              max_duration=30):
     """
     Continuously listen to the user until speech is detected.
