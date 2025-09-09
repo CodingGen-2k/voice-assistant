@@ -6,3 +6,6 @@ numpy
 pyttsx3
 asyncio
 logging
+rnnoise-cli
+pyrnnoise
+noisereduce

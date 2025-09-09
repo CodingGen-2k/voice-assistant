@@ -1,0 +1,16 @@
+do we need on device asr or cloud based asr??
+
+
+today 9 sept-
+
+the code I have right now:
+It records in 1-second chunks.
+Keeps listening until either:
+Max duration (30s) is reached, OR
+Silence is detected for SILENCE_LIMIT chunks (default 5s) after speech has started.
+
+That means:
+
+If the user never speaks at all, it will still keep running for the full 30s (since the silence counter only starts after speech begins).
+If the user speaks briefly (e.g., 3s) and then stops, it will detect silence for 5s → exit after ~8s total.
+If the user keeps talking, it will run until 30s hard stop.
