@@ -1,0 +1,8 @@
+torch 
+torchaudio 
+silero-vad 
+sounddevice 
+numpy 
+pyttsx3
+asyncio
+logging
